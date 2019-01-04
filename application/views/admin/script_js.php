@@ -1,7 +1,8 @@
  <!-- script ajax add -->
         <script type="text/javascript">
         LobiAdmin.loadScript([
-            '<?php echo base_url();?>assets/admin/js/plugin/datatables/jquery.dataTables.min.js'
+            '<?php echo base_url();?>assets/admin/js/plugin/datatables/jquery.dataTables.min.js',
+            '<?php echo base_url();?>assets/admin/js/plugin/select2/select2.min.js'
         ], function(){
             LobiAdmin.loadScript([
                 '<?php echo base_url();?>assets/admin/js/plugin/datatables/dataTables.bootstrap.min.js',
@@ -12,6 +13,7 @@
         
         function initPage(){
             $('#data-table-example1').DataTable();
+            $('.select2-demo').select2();
             $('#data-table-example2').DataTable({
                 "scrollY": 300,
                 "scrollX": true,

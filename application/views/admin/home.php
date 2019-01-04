@@ -1,9 +1,12 @@
+<?php
+ $data = $this->db->get_where('tb_users', array('username' => $this->session->userdata('username')))->row();
+?>
 <!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title></title>
+        <title>Dashboard -> Framework handri User:<?php echo $this->session->userdata('username');?></title>
         <link rel="shortcut icon" href="<?php echo base_url('assets/img/')?>" />
         
         <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/bootstrap.min.css')?>">
@@ -21,7 +24,7 @@
         <nav class="navbar navbar-default navbar-header header">
             <a class="navbar-brand" href="#">
                 
-                <img src="" class="hidden-xs" alt="" />
+                <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" class="hidden-xs" alt="" style="width: 140px; height: 40px;" />
             </a>
             <!--Menu show/hide toggle button-->
             <ul class="nav navbar-nav pull-left show-hide-menu">
@@ -36,14 +39,21 @@
                 <!--User avatar dropdown-->
                 <ul class="nav navbar-nav navbar-right user-actions">
                     <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img class="user-avatar" src="<?php echo base_url('assets/img/')?>" alt="..."/>
+                            <?php if(empty($data->foto)): ?>
+                                <img class="user-avatar" src="<?php echo base_url('assets/img/users/default.png')?>" alt="..."/>
+                            <?php else: ?>
+                                <img class="user-avatar" src="<?php echo base_url('assets/img/users/'.$data->foto)?>" alt="..."/>
+                            <?php endif;?>
                             <b class="caret"></b>
                         </a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp;</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp;
+                                <?php echo $this->session->userdata('username');?></a></li>
                                                    
-                            <li><a href="<?php echo base_url('tp_admin/logout/');?>"><span class="glyphicon glyphicon-off"></span> &nbsp;&nbsp;Log out</a></li>
+                            <li><a href="<?php echo base_url('auth/logout/');?>"><span class="glyphicon glyphicon-off"></span> &nbsp;&nbsp;Log out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -60,20 +70,61 @@
                             <span class="inner-text">Dashboard</span>
                         </a>
                     </li>
-                    
+
+                    <?php foreach ($group_menu as $k) {?>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-<?php echo $k->icon;?> menu-item-icon"></i>
+                                <span class="inner-text"><?php echo $k->nama;?></span>
+                            </a>
+                            <?php foreach ($group_menu as $k) {?>
+                                <ul>
+                                    <li>
+                                        <a href="#<?php echo $k->controller.'/'.$k->methode;?>">
+                                            <span class="inner-text"><?php echo $k->nama_sub;?></span>
+                                        </a>
+                                    </li>                            
+                                </ul>
+                            <?php }?>
+                        </li>
+
+                    <?php }?>
+                    <?php if($this->session->userdata('level')=='1'):?>
+
                     <li>
                         <a href="#">
-                            <i class="fa fa-user menu-item-icon"></i>
-                            <span class="inner-text"> Menu</span>
+                            <i class="fa fa-gear menu-item-icon"></i>
+                            <span class="inner-text"> Setting</span>
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
-                                    <span class="inner-text">Table</span>
+                                <a href="#Controllers_crud/index">
+                                    <span class="inner-text">Controllers</span>
                                 </a>
-                            </li>                            
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="inner-text">Methode</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="inner-text">Role User</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="inner-text">Group Menu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="inner-text">Sub Menu</span>
+                                </a>
+                            </li>                                
                         </ul>
                     </li>
+                    <?php endif;?>
                 </ul>
             </nav>
             <div class="menu-collapse-line">
@@ -90,7 +141,6 @@
                 </ol>
             </div>
            
-            <?php echo $this->session->flashdata('info'); ?>
             <div id="content">
 
                
@@ -104,7 +154,7 @@
             </div>
             <form action class="lobi-form">
                 <fieldset>
-                    <header>LobiAdmin Settings</header>
+                    <header>Settings Pages</header>
                     <div class="form-group">
                         <label class="checkbox-inline lobicheck lobicheck-rounded">
                             Header fixed
@@ -275,7 +325,7 @@
                 clearLocalStorageSelector       : '[data-action="clear-storage"]',
                 confirmationBeforeClearStorage  : true,
                 clearStorageConfirmationMessage : "Are you sure you want to clear localStorage? This action can not be undone!",
-                defaultPage                     : 'dashboard',
+                defaultPage                     : '',
                 panelItemToggleAnimationDuration: 200,
                 enableUrlRouting                : true,
                 composeEmailViewSelector        : '[data-action="compose-email"]',
@@ -283,25 +333,25 @@
             };
 
             window.LobiAdminRoutes = {
-                '(.+)' : '<?php echo base_url('/tp_admin/$1')?>',
+                '(.+)' : '<?php echo base_url('/$1')?>',
             };
 
 
         </script>
         <script type="text/javascript" src="<?php echo base_url('assets/admin/js/LobiAdmin.min.js')?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/admin/js/app.js')?>"></script>
+        <?php if($this->session->flashdata('info')): ?>
         <script type="text/javascript">
             $(document).ready(function(){
                 setTimeout(function(){
                     //All demo scripts go here
                     Lobibox.notify('info', {
-                        img: '<?php echo base_url('assets/img/logo2.png');?>',
+                        img: '',
                         sound: false,
                         position: 'top right',
-                        delay: 15000,
-                        showClass: 'fadeInDown',
-                        title: 'Welcome to CMS.',
-                        msg: 'Program Seminar Unpam'
+                        delay: 5000,
+                        showClass: 'fadeInUp',
+                        msg: '<?php echo $this->session->flashdata('info'); ?>'
                     });
                 }, 1000);                
             });
@@ -313,6 +363,8 @@
                 return arr;
             }
         </script>
+        <?php endif; ?>
+
 
        
 

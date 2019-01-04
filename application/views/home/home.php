@@ -1,16 +1,10 @@
+<!-- slideshow -->
 <section class="rev_slider_wrapper">
  <div class="rev_slider materialize-slider">
   <ul>
-    
-       
-    
-
-    <!-- slide 1 start --> 
-    <li data-transition="fade" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="<?php echo base_url('assets/img/slider-bg-1.jpg');?>"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
-        <!-- MAIN IMAGE -->
-        <img src="<?php echo base_url('assets/img/slider-bg-1.jpg');?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-no-retina>
-
-        <!-- LAYER NR. 1 -->
+  <?php foreach ($slideshow as $k) {?>
+    <li data-transition="fade" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="<?php echo base_url('assets/img/promotion/'.$k->gambar);?>"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
+        <img src="<?php echo base_url('assets/img/promotion/'.$k->gambar);?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-no-retina>
         <div class="tp-caption NotGeneric-Title tp-resizeme"
             data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
             data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-50','-50']" 
@@ -28,10 +22,9 @@
             data-splitin="none" 
             data-splitout="none" 
             data-responsive_offset="on"
-            style="z-index: 5; color: #373a3d; white-space: nowrap;">Framework Handri
+            style="z-index: 5; color: #373a3d; white-space: nowrap;"><?php echo $k->judul ;?>
         </div>
 
-        <!-- LAYER NR. 2 -->
         <div class="tp-caption tp-resizeme rev-subheading blue-text"
             data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
             data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','10','10']" 
@@ -46,10 +39,9 @@
             data-splitin="none" 
             data-splitout="none" 
             data-responsive_offset="on"
-            style="z-index: 6; color: #666; white-space: nowrap;">Dibuat dengan Framework CI dan sistem ACL
+            style="z-index: 6; color: #666; white-space: nowrap;"><?php echo $k->description ;?>
         </div>
 
-        <!-- LAYER NR. 3 -->
         <div class="tp-caption tp-resizeme rev-btn  rs-parallaxlevel-0"
             data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
             data-y="['middle','middle','middle','middle']" data-voffset="['100','100','100','100']" 
@@ -71,11 +63,124 @@
         </div>
 
     </li>
-    <!-- slide 1 end -->
-    
-
-
-  
+<?php };?>
   </ul>             
- </div><!-- end revolution slider -->
-</section><!-- end of slider wrapper -->
+ </div>
+</section>
+
+<!-- what we do -->
+<section class="section-padding">
+    <div class="container">
+
+      <div class="text-center mb-80">
+          <h2 class="section-title text-uppercase">What We Do</h2>
+          <p class="section-sub">Quisque non erat mi. Etiam congue et augue sed tempus. Aenean sed ipsum luctus, scelerisque ipsum nec, iaculis justo. Sed at vestibulum purus, sit amet viverra diam nulla ac nisi rhoncus.</p>
+      </div>
+
+      <div class="seo-featured-carousel brand-dot">
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-1.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Web Optimize</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-2.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Data Analysis</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-3.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Concept Development</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-4.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Content Marketing</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-5.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Big Data</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-6.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Mobile Marketing</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-7.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Data Organize</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+
+
+          <div class="featured-item seo-service">
+              <div class="icon">
+                  <img class="img-responsive" src="assets/img/seo/service-8.jpg" alt="">
+              </div>
+              <div class="desc">
+                  <h2>Pay Per Click</h2>
+                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
+                  <div class="bg-overlay"></div>
+                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
+              </div>
+          </div><!-- /.featured-item -->
+      </div><!-- /.seo-featured -->
+
+    </div><!-- /.container -->
+</section>

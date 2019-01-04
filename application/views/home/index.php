@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="">
-        <title></title>
+        <title>Template Framework Handri</title>
         <link rel="shortcut icon" href="assets/img/ico/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
@@ -65,7 +65,7 @@
                <div class="col-md-2 text-right">
                 <ul class="topbar-cta no-margin">
                   <li>
-                    <a>Login</a>
+                    <a href="<?= base_url('login')?>">Login</a>
                   </li>
                 </ul>
               </div>
@@ -116,6 +116,7 @@
         </header>
         
        <?php $this->load->view($content); ?>
+
 
         <section class="section-padding">
           
