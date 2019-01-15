@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,37 +37,35 @@
                                 <div class="text-center">
                                     <h2 class="text-uppercase m-t-0 m-b-30">
                                         <a href="index.html" class="text-success">
-                                            <span><img src="<?= base_url('assets/admin');?>/images/logo.png" alt="" height="30"></span>
+                                            <span><img src="<?= base_url('assets/img/logo-pt.jpg');?>" alt="" height="100"></span>
                                         </a>
                                     </h2>
                                     <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                                 </div>
                                 <div class="account-content">
-                                    <form class="form-horizontal" action="#">
+                                    <div id="infoMessage"><?php echo $message;?></div>
+                                    <form class="form-horizontal" action="<?= base_url('auth/login');?>" method="post">
 
                                         <div class="form-group m-b-20">
                                             <div class="col-xs-12">
-                                                <label for="emailaddress">Email address</label>
-                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                                <label for="emailaddress">Username</label>
+                                                <input class="form-control" type="email" id="identity" name="identity" placeholder="john@deo.com">
                                             </div>
                                         </div>
 
                                         <div class="form-group m-b-20">
                                             <div class="col-xs-12">
-                                                <a href="pages-forget-password.html" class="text-muted pull-right font-14">Forgot your password?</a>
+                                                <a href="<?= base_url('forgot_password');?>" class="text-muted pull-right font-14">Forgot your password?</a>
                                                 <label for="password">Password</label>
-                                                <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                                <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
                                             </div>
                                         </div>
 
                                         <div class="form-group m-b-30">
                                             <div class="col-xs-12">
-                                                <div class="checkbox checkbox-primary">
-                                                    <input id="checkbox5" type="checkbox">
-                                                    <label for="checkbox5">
-                                                        Remember me
-                                                    </label>
-                                                </div>
+                                                
+                                                <?php echo form_checkbox('remember','1',FALSE);?> Remember me
+                                                
                                             </div>
                                         </div>
 
@@ -85,11 +84,7 @@
                             <!-- end card-box-->
 
 
-                            <div class="row m-t-50">
-                                <div class="col-sm-12 text-center">
-                                    <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-dark m-l-5">Sign Up</a></p>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <!-- end wrapper -->

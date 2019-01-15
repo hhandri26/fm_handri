@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends MY_Controller 
+class Home extends CI_Controller 
 {
   public function __construct()
   {
@@ -12,8 +12,7 @@ class Home extends MY_Controller
 
   public function index()
   {
-    $level              = $this->session->userdata('level');
-    $data['group_menu'] = $this->Dashboard_models->get_group_menu($level)->result();
+    $data['test']     = 'welcome';
     $this->load->view('admin/home', $data);
   }
 

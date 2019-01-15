@@ -1,5 +1,5 @@
 <?php
- $data = $this->db->get_where('tb_users', array('username' => $this->session->userdata('username')))->row();
+ $data = $this->db->get_where('users', array('username' => $this->session->userdata('username')))->row();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +11,19 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="<?= base_url('admin/');?>assets/images/favicon.ico">
+        <link rel="shortcut icon" href="<?= base_url('assets/admin/');?>images/favicon.ico">
 
         <!--Morris Chart CSS -->
-            <link rel="stylesheet" href="<?= base_url('admin/');?>assets/plugins/morris/morris.css">
+            <link rel="stylesheet" href="<?= base_url('assets/admin/');?>plugins/morris/morris.css">
 
         <!-- Bootstrap core CSS -->
-        <link href="<?= base_url('admin/');?>assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?= base_url('assets/admin/');?>css/bootstrap.min.css" rel="stylesheet">
         <!-- MetisMenu CSS -->
-        <link href="<?= base_url('admin/');?>assets/css/metisMenu.min.css" rel="stylesheet">
+        <link href="<?= base_url('assets/admin/');?>css/metisMenu.min.css" rel="stylesheet">
         <!-- Icons CSS -->
-        <link href="<?= base_url('admin/');?>assets/css/icons.css" rel="stylesheet">
+        <link href="<?= base_url('assets/admin/');?>css/icons.css" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="<?= base_url('admin/');?>assets/css/style.css" rel="stylesheet">
+        <link href="<?= base_url('assets/admin/');?>css/style.css" rel="stylesheet">
 
     </head>
 
@@ -39,7 +39,7 @@
                 <div class="topbar-left">
                     <div class="">
                         <a href="index.html" class="logo">
-                            <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" alt="logo" class="logo-lg" />
+                            <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" alt="logo" class="logo-lg" style="height: 55px" />
                             <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
@@ -624,20 +624,20 @@
 
 
         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="<?= base_url('admin/');?>assets/js/jquery-2.1.4.min.js"></script>
-        <script src="<?= base_url('admin/');?>assets/js/bootstrap.min.js"></script>
-        <script src="<?= base_url('admin/');?>assets/js/metisMenu.min.js"></script>
-        <script src="<?= base_url('admin/');?>assets/js/jquery.slimscroll.min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>js/jquery-2.1.4.min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>js/bootstrap.min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>js/metisMenu.min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>js/jquery.slimscroll.min.js"></script>
 
         <!--Morris Chart-->
-        <script src="<?= base_url('admin/');?>assets/plugins/morris/morris.min.js"></script>
-        <script src="<?= base_url('admin/');?>assets/plugins/raphael/raphael-min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>plugins/morris/morris.min.js"></script>
+        <script src="<?= base_url('assets/admin/');?>plugins/raphael/raphael-min.js"></script>
 
         <!-- Dashboard init -->
-        <script src="<?= base_url('admin/');?>assets/pages/jquery.dashboard.js"></script>
+        <script src="<?= base_url('assets/admin/');?>pages/jquery.dashboard.js"></script>
 
         <!-- App Js -->
-        <script src="<?= base_url('admin/');?>assets/js/jquery.app.js"></script>
+        <script src="<?= base_url('assets/admin/');?>js/jquery.app.js"></script>
 
     </body>
 </html>

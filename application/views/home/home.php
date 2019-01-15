@@ -1,186 +1,1082 @@
-<!-- slideshow -->
-<section class="rev_slider_wrapper">
- <div class="rev_slider materialize-slider">
-  <ul>
-  <?php foreach ($slideshow as $k) {?>
-    <li data-transition="fade" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="<?php echo base_url('assets/img/promotion/'.$k->gambar);?>"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="materialize Material" data-description="">
-        <img src="<?php echo base_url('assets/img/promotion/'.$k->gambar);?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-no-retina>
-        <div class="tp-caption NotGeneric-Title tp-resizeme"
-            data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
-            data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-50','-50']" 
-            data-fontsize="['60','60','50','55']"
-            data-lineheight="['70','70','60','60']"
-            data-width="none"
-            data-height="none"
-            data-whitespace="nowrap"
-            data-transform_idle="o:1;"
-            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:900;e:Power4.easeInOut;" 
-            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
-            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-            data-start="1000" 
-            data-splitin="none" 
-            data-splitout="none" 
-            data-responsive_offset="on"
-            style="z-index: 5; color: #373a3d; white-space: nowrap;"><?php echo $k->judul ;?>
-        </div>
-
-        <div class="tp-caption tp-resizeme rev-subheading blue-text"
-            data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
-            data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','10','10']" 
-            data-whitespace="nowrap"
-            data-transform_idle="o:1;"
- 
-            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:900;e:Power4.easeInOut;" 
-            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-            data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
-            data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-            data-start="1200" 
-            data-splitin="none" 
-            data-splitout="none" 
-            data-responsive_offset="on"
-            style="z-index: 6; color: #666; white-space: nowrap;"><?php echo $k->description ;?>
-        </div>
-
-        <div class="tp-caption tp-resizeme rev-btn  rs-parallaxlevel-0"
-            data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" 
-            data-y="['middle','middle','middle','middle']" data-voffset="['100','100','100','100']" 
-            data-width="none"
-            data-height="none"
-            data-whitespace="nowrap"
-            data-transform_idle="o:1;"
-            data-style_hover="cursor:default;"
-
-            data-transform_in="y:50px;opacity:0;s:900;e:Power4.easeInOut;" 
-            data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-            data-mask_out="x:inherit;y:inherit;" 
-            data-start="1400" 
-            data-splitin="none" 
-            data-splitout="none"
-            data-responsive_offset="on"
-            style="z-index: 8; white-space: nowrap;">
-            <a href="#" class="btn btn-lg  waves-effect waves-light">Contact</a>
-        </div>
-
-    </li>
-<?php };?>
-  </ul>             
- </div>
-</section>
-
-<!-- what we do -->
-<section class="section-padding">
-    <div class="container">
-
-      <div class="text-center mb-80">
-          <h2 class="section-title text-uppercase">What We Do</h2>
-          <p class="section-sub">Quisque non erat mi. Etiam congue et augue sed tempus. Aenean sed ipsum luctus, scelerisque ipsum nec, iaculis justo. Sed at vestibulum purus, sit amet viverra diam nulla ac nisi rhoncus.</p>
+<!-- section -->
+      <div class="section">
+         <div id="main_slider_mobile" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+               <li data-target="#main_slider_mobile" data-slide-to="0" class=""></li>
+               <li data-target="#main_slider_mobile" data-slide-to="1" class="active"></li>
+               <li data-target="#main_slider_mobile" data-slide-to="2" class=""></li>
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+               <div class="carousel-item">
+                  <img class="img-responsive" src="<?= base_url();?>assets/img/post1.png" alt="#">
+               </div>
+               <div class="carousel-item active">
+                  <img class="img-responsive" src="<?= base_url();?>assets/img/post2.png" alt="#">
+               </div>
+               <div class="carousel-item">
+                  <img class="img-responsive" src="<?= base_url();?>assets/img/post3.png" alt="#">
+               </div>
+            </div>
+         </div>
       </div>
-
-      <div class="seo-featured-carousel brand-dot">
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-1.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Web Optimize</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-2.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Data Analysis</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-3.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Concept Development</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-4.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Content Marketing</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-5.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Big Data</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-6.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Mobile Marketing</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-7.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Data Organize</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-
-
-          <div class="featured-item seo-service">
-              <div class="icon">
-                  <img class="img-responsive" src="assets/img/seo/service-8.jpg" alt="">
-              </div>
-              <div class="desc">
-                  <h2>Pay Per Click</h2>
-                  <p>Porttitor communicate pandemic data rather than enabled niche pandemic data rather markets</p>
-                  <div class="bg-overlay"></div>
-                  <p><a class="learn-more" href="#">Learn More <i class="fa fa-long-arrow-right"></i></a></p>
-              </div>
-          </div><!-- /.featured-item -->
-      </div><!-- /.seo-featured -->
-
-    </div><!-- /.container -->
-</section>
+      <!-- end section -->
+      <!-- section -->
+      <section id="ps-container" class="ps-container desk_slider">
+         <div class="ps-contentwrapper">
+            <div class="ps-content" style="background: url('<?= base_url();?>assets/img/post1.png')">
+               <div class="slide_inforcnt">
+                  <span>Culture News</span>
+                  <h2>New post images and information..</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p class="post_date">- Friday June, 13 2018</p>
+               </div>
+            </div>
+            <div class="ps-content" style="background: url('<?= base_url();?>assets/img/post2.png')">
+               <div class="slide_inforcnt">
+                  <span>Jungle News</span>
+                  <h2>New post images and information..</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p class="post_date">- Friday June, 13 2018</p>
+               </div>
+            </div>
+            <div class="ps-content" style="background: url('<?= base_url();?>assets/img/post3.png')">
+               <div class="slide_inforcnt">
+                  <span>Foods and market News</span>
+                  <h2>New post images and information..</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p class="post_date">- Friday June, 13 2018</p>
+               </div>
+            </div>
+         </div>
+         <!-- /ps-contentwrapper -->
+         <div class="ps-slidewrapper">
+            <div class="ps-slides">
+               <div style="background: url('<?= base_url();?>assets/img/s1.png')">
+                  <div class="slide_head">
+                     <h3>Culture News</h3>
+                  </div>
+               </div>
+               <div style="background: url('<?= base_url();?>assets/img/s2.png')">
+                  <div class="slide_head">
+                     <h3>Jungle News</h3>
+                  </div>
+               </div>
+               <div style="background: url('<?= base_url();?>assets/img/s3.png')">
+                  <div class="slide_head">
+                     <h3>Foods and market News</h3>
+                  </div>
+               </div>
+            </div>
+            <nav>
+               <a href="#" class="ps-prev" ></a>
+               <a href="#" class="ps-next" ></a>
+            </nav>
+         </div>
+      </section>
+      <!-- end section -->
+      <!-- section -->
+      <section class="layout_2_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 col-lg-9">
+                  <div class="full blog_post">
+                     <div class="inner_post_blog">
+                        <div class="heading">
+                           <h3>Recently Added News</h3>
+                        </div>
+                        <!-- post -->
+                        <div class="post p_style_1 post_inner_padding_15">
+                           <div class="post_img">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/post3.png" alt="#" />
+                           </div>
+                           <div class="post_time">
+                              <span>14 / june</span>
+                           </div>
+                           <div class="post_cont">
+                              <h4>Food recipes & guide for cooking</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   <ul class="blog_infor">
+                                    <li><i class="fa fa-user"></i><span>htmldotdesign</span></li>
+                                    <li><i class="fa fa-clock-o"></i><span>22 June 2018</span></li>
+                                  </ul>
+                              <div class="readmore">
+                                 <a href="#">Readmore ></a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- post end -->
+                        <!-- post -->
+                        <div class="post p_style_1 post_inner_padding_15">
+                           <div class="post_img">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/post1.png" alt="#" />
+                           </div>
+                           <div class="post_time">
+                              <span>14 / june</span>
+                           </div>
+                           <div class="post_cont">
+                              <h4>History & Culture</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   <ul class="blog_infor">
+                                    <li><i class="fa fa-user"></i><span>htmldotdesign</span></li>
+                                    <li><i class="fa fa-clock-o"></i><span>22 June 2018</span></li>
+                                  </ul>
+                              <div class="readmore">
+                                 <a href="#">Readmore ></a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- post end -->
+                        <!-- post -->
+                        <div class="post p_style_1 post_inner_padding_15">
+                           <div class="post_img">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/post2.png" alt="#" />
+                           </div>
+                           <div class="post_time">
+                              <span>14 / june</span>
+                           </div>
+                           <div class="post_cont">
+                              <h4>Animals & Natural</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   <ul class="blog_infor">
+                                    <li><i class="fa fa-user"></i><span>htmldotdesign</span></li>
+                                    <li><i class="fa fa-clock-o"></i><span>22 June 2018</span></li>
+                                  </ul>
+                              <div class="readmore">
+                                 <a href="#">Readmore ></a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- post end -->
+                        <div class="tab">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 col-lg-3">
+                  <div class="full">
+                     <div class="sidebar_section">
+                        <div class="side_blog">
+                           <h3>Following us</h3>
+                           <div class="social_icon">
+                              <ul>
+                                 <li><a class="social_bt fb" href="#"></a></li>
+                                 <li><a class="social_bt tw" href="#"></a></li>
+                                 <li><a class="social_bt ln" href="#"></a></li>
+                                 <li><a class="social_bt pi" href="#"></a></li>
+                                 <li><a class="social_bt yt" href="#"></a></li>
+                                 <li><a class="social_bt rss" href="#"></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="side_blog">
+                           <div class="banner_inner">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/banner_1.png" alt="#" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      <div class="row margin_top_30">
+               <div class="col-md-12">
+                  <div class="full blog_post">
+                     <div class="inner_post_blog">
+                        <div class="heading h_style_2">
+                           <h3>You may read</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="full">
+                     <div class="inner_section">
+                        <div class="row">
+                           <div class="col-lg-8">
+                              <div class="full">
+                                 <div id="business_section" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ul class="carousel-indicators">
+                                       <li data-target="#business_section" data-slide-to="0" class="active"></li>
+                                       <li data-target="#business_section" data-slide-to="1"></li>
+                                       <li data-target="#business_section" data-slide-to="2"></li>
+                                    </ul>
+                                    <!-- The slideshow -->
+                                    <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/s3.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date"><strong><i class="fa fa-user"></i> Mike Roy</strong><strong><i class="fa fa-clock-o"></i>July 24, 2018</strong></p>
+                                          </div>
+                                       </div>
+                                       <div class="carousel-item">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/s4.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date"><strong><i class="fa fa-user"></i> Mike Roy</strong><strong><i class="fa fa-clock-o"></i>July 24, 2018</strong></p>
+                                          </div>
+                                       </div>
+                                       <div class="carousel-item">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/s5.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date"><strong><i class="fa fa-user"></i> Mike Roy</strong><strong><i class="fa fa-clock-o"></i>July 24, 2018</strong></p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4">
+                              <div class="full">
+                                 <div class="sidebar_section">
+                                    <div class="side_blog margin_0">
+                                       <div class="tab_bar">
+                                          <ul id="Tab" class="nav nav-tabs" role="tablist">
+                                             <li class="nav-item">
+                                                <a id="popular" class="nav-link active" data-toggle="tab" href="#popular_post" role="tab" aria-selected="true">Popular Post</a>
+                                             </li>
+                                             <li class="nav-item">
+                                                <a id="profile" class="nav-link" data-toggle="tab" href="#recend_post" role="tab" aria-selected="false">Recend Post</a>
+                                             </li>
+                                             <li class="nav-item">
+                                                <a id="contact" class="nav-link" data-toggle="tab" href="#comment" role="tab" aria-selected="false">Comment</a>
+                                             </li>
+                                          </ul>
+                                          <div id="TabContent" class="tab-content">
+                                             <div class="tab-pane fade show active" id="popular_post" role="tabpanel" aria-labelledby="popular_post">
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Photography</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Education</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Nature of Culture</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="tab-pane fade" id="recend_post" role="tabpanel" aria-labelledby="recend_post">
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Photography</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Education</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Nature of Culture</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment">
+                                               <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Photography</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Education</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Nature of Culture</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row margin_top_30">
+                           <div class="col-md-6">
+                              <div class="full banner_mar">
+                                 <img class="img-responsive" src="<?= base_url();?>assets/img/b1.png" alt="#" />
+                                 <div class="overlay_banner">
+                                    <h3>Top of the week</h3>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="full banner_mar">
+                                 <img class="img-responsive" src="<?= base_url();?>assets/img/b2.png" alt="#" />
+                                 <div class="overlay_banner">
+                                    <h3>Top of the month</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12 col-lg-12">
+                  <div class="full blog_post">
+                     <div class="inner_post_blog">
+                        <div class="heading h_style_2">
+                           <h3>Featured post</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="full">
+                     <div class="inner_section post_slider">
+                        <div class="owl-carousel owl-theme">
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Today News</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Latest Design</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Photography</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Construction</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Education</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Natural</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Today News</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Latest Design</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Photography</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Construction</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Education</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Natural</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      <!-- section -->
+      <section>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="banner_half left_bg">
+                  <div class="full">
+                     <img class="img-responsive" src="<?= base_url();?>assets/img/back1.png" alt="#" />
+                     <div class="black_sed">
+                        <h3>City Highlight</h3>
+                        <ul>
+                           <li><i class="fa fa-eye"></i> 100 View</li>
+                           <li><i class="fa fa-comment" aria-hidden="true"></i> 85 Comment</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="banner_half right_bg white_fonts">
+                  <div class="full">
+                     <img class="img-responsive" src="<?= base_url();?>assets/img/back2.png" alt="#" />
+                     <div class="black_sed">
+                        <h3>Education Highlight News</h3>
+                        <ul>
+                           <li><i class="fa fa-eye"></i> 100 View</li>
+                           <li><i class="fa fa-comment" aria-hidden="true"></i> 85 Comment</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      <!-- section -->
+      <section class="layout_2_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full blog_post">
+                     <div class="inner_post_blog">
+                        <div class="heading h_style_2">
+                           <h3>Business</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="full">
+                     <div class="inner_section">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="full banner_mar">
+                                 <img class="img-responsive" src="<?= base_url();?>assets/img/b3.png" alt="#" />
+                                 <div class="overlay_banner">
+                                    <h3>Market Value</h3>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="full banner_mar">
+                                 <img class="img-responsive" src="<?= base_url();?>assets/img/b4.png" alt="#" />
+                                 <div class="overlay_banner">
+                                    <h3>Strategy</h3>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row  margin_top_30">
+                           <div class="col-lg-8">
+                              <div class="full">
+                                 <div id="marketing_section" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ul class="carousel-indicators">
+                                       <li data-target="#marketing_section" data-slide-to="0" class="active"></li>
+                                       <li data-target="#marketing_section" data-slide-to="1"></li>
+                                       <li data-target="#marketing_section" data-slide-to="2"></li>
+                                    </ul>
+                                    <!-- The slideshow -->
+                                    <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/post1.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business Banner</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date">- Friday June, 13 2018</p>
+                                          </div>
+                                       </div>
+                                       <div class="carousel-item">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/post2.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business Banner</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date">- Friday June, 13 2018</p>
+                                          </div>
+                                       </div>
+                                       <div class="carousel-item">
+                                          <img class="img-responsive" src="<?= base_url();?>assets/img/post3.png" alt="#" />
+                                          <div class="slide_inforcnt">
+                                             <span>Business Banner</span>
+                                             <h2>New post images and information..</h2>
+                                             <p class="post_date">- Friday June, 13 2018</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4">
+                              <div class="full">
+                                 <div class="sidebar_section">
+                                    <div class="side_blog margin_0">
+                                       <div class="tab_bar">
+                                          <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                             <li class="nav-item">
+                                                <a id="latest_news" class="nav-link active" data-toggle="tab" href="#latest_new" role="tab" aria-selected="true">Latest News</a>
+                                             </li>
+                                             <li class="nav-item">
+                                                <a id="business" class="nav-link" data-toggle="tab" href="#busniess_new" role="tab" aria-selected="false">Business</a>
+                                             </li>
+                                             <li class="nav-item">
+                                                <a id="comt" class="nav-link" data-toggle="tab" href="#comment_2" role="tab" aria-selected="false">Comment</a>
+                                             </li>
+                                          </ul>
+                                          <div class="tab-content" id="myTabContent">
+                                             <div class="tab-pane fade show active" id="latest_new" role="tabpanel" aria-labelledby="popular_post">
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="tab-pane fade" id="busniess_new" role="tabpanel" aria-labelledby="recend_post">
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="tab-pane fade" id="comment_2" role="tabpanel" aria-labelledby="comment">
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="tab_inner">
+                                                   <div class="tab_side_img">
+                                                      <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                                                   </div>
+                                                   <div class="tab_side_cont">
+                                                      <div class="post_head">
+                                                         <h4>Latest News</h4>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                         <div class="post_head_inner">
+                                                            <ul>
+                                                               <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                                               <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12 col-lg-12">
+                  <div class="full blog_post">
+                     <div class="inner_post_blog">
+                        <div class="heading h_style_2">
+                           <h3>Latest Post</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="full">
+                     <div class="inner_section post_slider">
+                        <div class="owl-carousel owl-theme">
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Today News</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Latest Design</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l3.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Photography</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l4.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Construction</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l5.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Education</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l6.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Natural</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l1.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Today News</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="item">
+                              <img class="img-responsive" src="<?= base_url();?>assets/img/l2.png" alt="#" />
+                              <div class="post_head">
+                                 <h4>Latest Design</h4>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                                 <div class="post_head_inner">
+                                    <ul>
+                                       <li><i class="fa fa-calendar" aria-hidden="true"></i> 19 June 2018</li>
+                                       <li><i class="fa fa-comment" aria-hidden="true"></i> 14 Comment</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      $this->load->view($content);
+      <!-- section -->
+      <section>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="banner_half left_bg">
+                  <div class="full">
+                     <img class="img-responsive" src="<?= base_url();?>assets/img/back3.png" alt="#" />
+                     <div class="black_sed">
+                        <h3>Today's Fashion</h3>
+                        <ul>
+                           <li><i class="fa fa-eye"></i> 100 View</li>
+                           <li><i class="fa fa-comment" aria-hidden="true"></i> 85 Comment</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="banner_half right_bg white_fonts">
+                  <div class="full">
+                     <img class="img-responsive" src="<?= base_url();?>assets/img/back4.png" alt="#" />
+                     <div class="black_sed">
+                        <h3>Home News</h3>
+                        <ul>
+                           <li><i class="fa fa-eye"></i> 100 View</li>
+                           <li><i class="fa fa-comment" aria-hidden="true"></i> 85 Comment</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      <!-- section -->
+      <section class="news_latter">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="signup">
+                     <h4 class="left_cont">Sign-up for our Newsletter</h4>
+                     <form action="index.html">
+                        <fieldset>
+                           <div class="field">
+                              <input type="text" placeholder="Email Address" required />
+                              <button>Submit</button>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->

@@ -15,7 +15,6 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['content']		='home/home';
-		$data['slideshow']		= $this->welcome_models->slideshow()->result();
 		$this->load->view('home/index', $data);
 	}
 
