@@ -1,74 +1,115 @@
 <!DOCTYPE html>
-<!--Author     : @arboshiki-->
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Login to Admin</title>
-        <link rel="shortcut icon" href="<?php echo base_url('assets/img/belajarwebsite/icon belajarwebsite.png')?>" />
+        <meta charset="utf-8" />
+        <title>Dashboard -> Framework handri User:</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/bootstrap.min.css')?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/font-awesome.min.css')?>"/>
-        
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/login.css')?>"/>
+        <link rel="shortcut icon" href="<?= base_url('admin/');?>assets/images/favicon.ico">
+
+        <!-- Bootstrap core CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/bootstrap.min.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/metisMenu.min.css" rel="stylesheet">
+        <!-- Icons CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/icons.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="<?= base_url('admin/');?>assets/css/style.css" rel="stylesheet">
+
     </head>
-    <body style="background-image: url('<?php echo base_url('assets/admin/img/demo/3_1920.jpg')?>')">
-        <div class="login-wrapper fadeInDown animated">
-            <form action="<?php echo base_url('tp_admin/getlogin');?>" method="post" class="lobi-form login-form visible">
-                <div class="login-header">
-                    Login to your account
-                </div>
-                <?php if($this->session->flashdata('info')): ?>
-					<div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    	<span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Maaf !</strong> <?php echo $this->session->flashdata('info'); ?>
-                	</div>
-				<?php endif; ?>
-                <div class="login-body no-padding">
-                    <fieldset>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <label class="input">
-                                <span class="input-icon input-icon-prepend fa fa-user"></span>
-                                <input type="text" name="username" placeholder="Username">
-                                <span class="tooltip tooltip-top-left"><i class="fa fa-user text-cyan-dark"></i> Please enter the username</span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <label class="input">
-                                <span class="input-icon input-icon-prepend fa fa-key"></span>
-                                <input type="password" name="password" placeholder="Password">
-                                <span class="tooltip tooltip-top-left"><i class="fa fa-key text-cyan-dark"></i> Please enter your password</span>
-                            </label>
-                          
-                        </div>
 
-                        <div class="row">
-                            <div class="col-xs-8">
-                                <label class="checkbox lobicheck lobicheck-info lobicheck-inversed lobicheck-lg">
-                                    <input type="checkbox" name="remember_me" value="0"> 
-                                    <i></i> Remember me
-                                </label>
-                            </div>
-                            <div class="col-xs-4">
-                                <button type="submit" class="btn btn-info btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-               
-            </form>
-            <!--Sign up form-->
-           
-           
-        </div>
-        
 
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/lib/jquery.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/bootstrap/bootstrap.min.js')?>"></script>
-       
+    <body>
+
+        <!-- HOME -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="wrapper-page">
+
+                            <div class="m-t-40 card-box">
+                                <div class="text-center">
+                                    <h2 class="text-uppercase m-t-0 m-b-30">
+                                        <a href="index.html" class="text-success">
+                                            <span><img src="<?= base_url('admin/');?>assets/images/logo.png" alt="" height="30"></span>
+                                        </a>
+                                    </h2>
+                                    <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
+                                </div>
+                                <div class="account-content">
+                                    <form class="form-horizontal" action="#">
+
+                                        <div class="form-group m-b-20">
+                                            <div class="col-xs-12">
+                                                <label for="emailaddress">Email address</label>
+                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group m-b-20">
+                                            <div class="col-xs-12">
+                                                <a href="pages-forget-password.html" class="text-muted pull-right font-14">Forgot your password?</a>
+                                                <label for="password">Password</label>
+                                                <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group m-b-30">
+                                            <div class="col-xs-12">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox5" type="checkbox">
+                                                    <label for="checkbox5">
+                                                        Remember me
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group account-btn text-center m-t-10">
+                                            <div class="col-xs-12">
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <div class="clearfix"></div>
+
+                                </div>
+                            </div>
+                            <!-- end card-box-->
+
+
+                            <div class="row m-t-50">
+                                <div class="col-sm-12 text-center">
+                                    <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-dark m-l-5">Sign Up</a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end wrapper -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END HOME -->
+
+
+
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="<?= base_url('admin/');?>assets/js/jquery-2.1.4.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/bootstrap.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/metisMenu.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/jquery.slimscroll.min.js"></script>
+
+        <!-- App Js -->
+        <script src="<?= base_url('admin/');?>assets/js/jquery.app.js"></script>
+
     </body>
 </html>

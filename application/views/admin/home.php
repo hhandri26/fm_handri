@@ -2,371 +2,642 @@
  $data = $this->db->get_where('tb_users', array('username' => $this->session->userdata('username')))->row();
 ?>
 <!DOCTYPE html>
-<html> 
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Dashboard -> Framework handri User:<?php echo $this->session->userdata('username');?></title>
-        <link rel="shortcut icon" href="<?php echo base_url('assets/img/')?>" />
-        
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/bootstrap.min.css')?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/font-awesome.min.css')?>"/>
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/weather-icons.min.css')?>"/>
+        <meta charset="utf-8" />
+        <title>Dashboard -> Framework handri User:</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!--lobiadmin-with-plugins.css contains all LobiAdmin css plus lobiplugins all css files, plus third party plugins-->
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/lobiadmin-with-plugins.css')?>"/>
-        <!--Put your css here-->
-        
-        <!--This css file is for only demo usage-->
-        <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/demo.css')?>"/>
+        <link rel="shortcut icon" href="<?= base_url('admin/');?>assets/images/favicon.ico">
+
+        <!--Morris Chart CSS -->
+            <link rel="stylesheet" href="<?= base_url('admin/');?>assets/plugins/morris/morris.css">
+
+        <!-- Bootstrap core CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/bootstrap.min.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/metisMenu.min.css" rel="stylesheet">
+        <!-- Icons CSS -->
+        <link href="<?= base_url('admin/');?>assets/css/icons.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="<?= base_url('admin/');?>assets/css/style.css" rel="stylesheet">
+
     </head>
+
+
     <body>
-        <nav class="navbar navbar-default navbar-header header">
-            <a class="navbar-brand" href="#">
-                
-                <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" class="hidden-xs" alt="" style="width: 140px; height: 40px;" />
-            </a>
-            <!--Menu show/hide toggle button-->
-            <ul class="nav navbar-nav pull-left show-hide-menu">
-                <li>
-                    <a href="#" class="border-radius-0 btn font-size-lg" data-action="show-hide-sidebar">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </li>
-            </ul>
-            
-            <div class="navbar-items">
-                <!--User avatar dropdown-->
-                <ul class="nav navbar-nav navbar-right user-actions">
-                    <li class="dropdown">
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <?php if(empty($data->foto)): ?>
-                                <img class="user-avatar" src="<?php echo base_url('assets/img/users/default.png')?>" alt="..."/>
-                            <?php else: ?>
-                                <img class="user-avatar" src="<?php echo base_url('assets/img/users/'.$data->foto)?>" alt="..."/>
-                            <?php endif;?>
-                            <b class="caret"></b>
+        <div id="page-wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="">
+                        <a href="index.html" class="logo">
+                            <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" alt="logo" class="logo-lg" />
+                            <img src="<?php echo base_url('assets/img/logo-pt.jpg')?>" alt="logo" class="logo-sm hidden" />
                         </a>
+                    </div>
+                </div>
 
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp;
-                                <?php echo $this->session->userdata('username');?></a></li>
-                                                   
-                            <li><a href="<?php echo base_url('auth/logout/');?>"><span class="glyphicon glyphicon-off"></span> &nbsp;&nbsp;Log out</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <!-- Top navbar -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="">
+
+                            <!-- Mobile menu button -->
+                            <div class="pull-left">
+                                <button type="button" class="button-menu-mobile visible-xs visible-sm">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+
+                            <!-- Top nav left menu -->
+                            <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+
+                            <!-- Top nav Right menu -->
+                            <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
+                                <li class="hidden-xs">
+                                    <form role="search" class="navbar-left app-search pull-left">
+                                         <input type="text" placeholder="Search..." class="form-control">
+                                         <a href=""><i class="fa fa-search"></i></a>
+                                    </form>
+                                </li>
+                                <li class="dropdown top-menu-item-xs">
+                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
+                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
+                                    </a>
+                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
+                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
+                                        <li class="list-group notification-list" style="height: 267px;">
+                                           <div class="slimscroll">
+                                               <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-diamond bg-primary"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+
+                                               <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-cog bg-warning"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">New settings</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+
+                                               <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-bell-o bg-custom"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">Updates</h5>
+                                                        <p class="m-0">
+                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+
+                                               <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-user-plus bg-danger"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">New user registered</h5>
+                                                        <p class="m-0">
+                                                            <small>You have 10 unread messages</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+
+                                                <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-diamond bg-primary"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+
+                                               <!-- list item-->
+                                               <a href="javascript:void(0);" class="list-group-item">
+                                                  <div class="media">
+                                                     <div class="media-left p-r-10">
+                                                        <em class="fa fa-cog bg-warning"></em>
+                                                     </div>
+                                                     <div class="media-body">
+                                                        <h5 class="media-heading">New settings</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                     </div>
+                                                  </div>
+                                               </a>
+                                           </div>
+                                        </li>
+                                        <!--<li>-->
+                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
+                                                <!--<small class="font-600">See all notifications</small>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown top-menu-item-xs">
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true">
+                                    <?php if(empty($data->foto)): ?>
+                                        <img class="user-avatar" src="<?php echo base_url('assets/img/users/default.png')?>" class="img-circle" alt="..."/>
+                                    <?php else: ?>
+                                        <img class="user-avatar" src="<?php echo base_url('assets/img/users/'.$data->foto)?>" class="img-circle" alt="..."/>
+                                    <?php endif;?>
+                                    
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Profile</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-10"></i> Settings</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-lock m-r-10"></i> Lock screen</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<?php echo base_url('auth/logout/');?>"><i class="ti-power-off m-r-10"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!-- end container -->
+                </div> <!-- end navbar -->
             </div>
-           
-        </nav>
-        <div class="menu">
-            
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#dashboard">
-                            <i class="fa fa-home menu-item-icon"></i>
-                            <span class="inner-text">Dashboard</span>
-                        </a>
-                    </li>
+            <!-- Top Bar End -->
 
-                    <?php foreach ($group_menu as $k) {?>
-                        <li>
-                            <a href="">
-                                <i class="fa fa-<?php echo $k->icon;?> menu-item-icon"></i>
-                                <span class="inner-text"><?php echo $k->nama;?></span>
-                            </a>
-                            <?php foreach ($group_menu as $k) {?>
-                                <ul>
-                                    <li>
-                                        <a href="#<?php echo $k->controller.'/'.$k->methode;?>">
-                                            <span class="inner-text"><?php echo $k->nama_sub;?></span>
-                                        </a>
-                                    </li>                            
-                                </ul>
-                            <?php }?>
-                        </li>
 
-                    <?php }?>
-                    <?php if($this->session->userdata('level')=='1'):?>
+            <!-- Page content start -->
+            <div class="page-contentbar">
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-gear menu-item-icon"></i>
-                            <span class="inner-text"> Setting</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="#Controllers_crud/index">
-                                    <span class="inner-text">Controllers</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="inner-text">Methode</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="inner-text">Role User</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="inner-text">Group Menu</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="inner-text">Sub Menu</span>
-                                </a>
-                            </li>                                
-                        </ul>
-                    </li>
-                    <?php endif;?>
-                </ul>
-            </nav>
-            <div class="menu-collapse-line">
-                <!--Menu collapse/expand icon is put and control from LobiAdmin.js file-->
-                <div class="menu-toggle-btn" data-action="collapse-expand-sidebar"></div>
+                <!--left navigation start-->
+                <aside class="sidebar-navigation">
+                    <div class="scrollbar-wrapper">
+                        <div>
+                            <button type="button" class="button-menu-mobile btn-mobile-view visible-xs visible-sm">
+                                <i class="mdi mdi-close"></i>
+                            </button>
+                            <!-- User Detail box -->
+                            <div class="user-details">
+                                <div class="pull-left">
+                                     <?php if(empty($data->foto)): ?>
+                                        <img class="user-avatar" src="<?php echo base_url('assets/img/users/default.png')?>" class="thumb-md img-circle" alt="..."/>
+                                    <?php else: ?>
+                                        <img class="user-avatar" src="<?php echo base_url('assets/img/users/'.$data->foto)?>" class="thumb-md img-circle" alt="..."/>
+                                    <?php endif;?>
+                                </div>
+                                <div class="user-info">
+                                    <a href="#">Stanley Jones</a>
+                                    <p class="text-muted m-0">Administrator</p>
+                                </div>
+                            </div>
+                            <!--- End User Detail box -->
+
+                            <!-- Left Menu Start -->
+                            <ul class="metisMenu nav" id="side-menu">
+                                <li><a href="index.html"><i class="ti-home"></i> Dashboard </a></li>
+
+                                <li><a href="ui-elements.html"><span class="label label-custom pull-right">11</span> <i class="ti-paint-bucket"></i> UI Elements </a></li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-light-bulb"></i> Components <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="components-range-slider.html">Range Slider</a></li>
+                                        <li><a href="components-alerts.html">Alerts</a></li>
+                                        <li><a href="components-icons.html">Icons</a></li>
+                                        <li><a href="components-widgets.html">Widgets</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="typography.html"><i class="ti-spray"></i> Typography </a></li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-pencil-alt"></i> Forms <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="forms-general.html">General Elements</a></li>
+                                        <li><a href="forms-advanced.html">Advanced Form</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-menu-alt"></i> Tables <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="tables-basic.html">Basic tables</a></li>
+                                        <li><a href="tables-advanced.html">Advanced tables</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="charts.html"><span class="label label-custom pull-right">5</span> <i class="ti-pie-chart"></i> Charts </a></li>
+
+                                <li><a href="maps.html"><i class="ti-location-pin"></i> Maps </a></li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-files"></i> Pages <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="pages-login.html">Login</a></li>
+                                        <li><a href="pages-register.html">Register</a></li>
+                                        <li><a href="pages-forget-password.html">Forget Password</a></li>
+                                        <li><a href="pages-lock-screen.html">Lock-screen</a></li>
+                                        <li><a href="pages-blank.html">Blank page</a></li>
+                                        <li><a href="pages-404.html">Error 404</a></li>
+                                        <li><a href="pages-confirm-mail.html">Confirm Mail</a></li>
+                                        <li><a href="pages-session-expired.html">Session Expired</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-widget"></i> Extra Pages <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="extras-timeline.html">Timeline</a></li>
+                                        <li><a href="extras-invoice.html">Invoice</a></li>
+                                        <li><a href="extras-profile.html">Profile</a></li>
+                                        <li><a href="extras-calendar.html">Calendar</a></li>
+                                        <li><a href="extras-faqs.html">FAQs</a></li>
+                                        <li><a href="extras-pricing.html">Pricing</a></li>
+                                        <li><a href="extras-contacts.html">Contacts</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="ti-share"></i> Multi Level <span class="fa arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="javascript: void(0);">Level 1.1</a></li>
+                                        <li><a href="javascript: void(0);" aria-expanded="true">Level 1.2 <span class="fa arrow"></span></a>
+                                            <ul class="nav-third-level nav" aria-expanded="true">
+                                                <li><a href="javascript: void(0);">Level 2.1</a></li>
+                                                <li><a href="javascript: void(0);">Level 2.2</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--Scrollbar wrapper-->
+                </aside>
+                <!--left navigation end-->
+
+                <!-- START PAGE CONTENT -->
+                <div id="page-right-content">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box widget-inline">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="widget-inline-box text-center">
+                                                <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b data-plugin="counterup">8954</b></h3>
+                                                <p class="text-muted">Lifetime total sales</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="widget-inline-box text-center">
+                                                <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b data-plugin="counterup">7841</b></h3>
+                                                <p class="text-muted">Income amounts</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="widget-inline-box text-center">
+                                                <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b data-plugin="counterup">6521</b></h3>
+                                                <p class="text-muted">Total users</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="widget-inline-box text-center b-0">
+                                                <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b data-plugin="counterup">325</b></h3>
+                                                <p class="text-muted">Total visits</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="m-t-0">Total Revenue</h4>
+                                    <div class="text-center">
+                                        <ul class="list-inline chart-detail-list">
+                                            <li>
+                                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-primary"></i>Series A</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-muted"></i>Series B</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="dashboard-bar-stacked" style="height: 300px;"></div>
+                                </div>
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="m-t-0">Sales Analytics</h4>
+                                    <div class="text-center">
+                                        <ul class="list-inline chart-detail-list">
+                                            <li>
+                                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-primary"></i>Mobiles</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-info"></i>Tablets</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="dashboard-line-chart" style="height: 300px;"></div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <h4 class="m-t-0">Contacts</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mails m-0 table table-actions-bar">
+                                            <thead>
+                                                <tr>
+                                                    <th style="min-width: 95px;">
+                                                        <div class="checkbox checkbox-primary checkbox-single m-r-15">
+                                                            <input id="action-checkbox" type="checkbox">
+                                                            <label for="action-checkbox"></label>
+                                                        </div>
+                                                        <!--<div class="btn-group dropdown">-->
+                                                            <!--<button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>-->
+                                                            <!--<ul class="dropdown-menu" role="menu">-->
+                                                                <!--<li><a href="#">Action</a></li>-->
+                                                                <!--<li><a href="#">Another action</a></li>-->
+                                                                <!--<li><a href="#">Something else here</a></li>-->
+                                                                <!--<li class="divider"></li>-->
+                                                                <!--<li><a href="#">Separated link</a></li>-->
+                                                            <!--</ul>-->
+                                                        <!--</div>-->
+                                                    </th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Products</th>
+                                                    <th>Start Date</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox2" type="checkbox">
+                                                            <label for="checkbox2"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-2.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Tomaslau
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">tomaslau@dummy.com</a>
+                                                    </td>
+
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>356</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        01/11/2003
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox1" type="checkbox">
+                                                            <label for="checkbox1"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Chadengle
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">chadengle@dummy.com</a>
+                                                    </td>
+
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>568</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        01/11/2003
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox3" type="checkbox">
+                                                            <label for="checkbox3"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-3.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Stillnotdavid
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">stillnotdavid@dummy.com</a>
+                                                    </td>
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>201</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        12/11/2003
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox4" type="checkbox">
+                                                            <label for="checkbox4"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-4.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Kurafire
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">kurafire@dummy.com</a>
+                                                    </td>
+
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>56</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        14/11/2003
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox5" type="checkbox">
+                                                            <label for="checkbox5"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-5.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Shahedk
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">shahedk@dummy.com</a>
+                                                    </td>
+
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>356</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        20/11/2003
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-primary m-r-15">
+                                                            <input id="checkbox6" type="checkbox">
+                                                            <label for="checkbox6"></label>
+                                                        </div>
+
+                                                        <img src="assets/images/users/avatar-6.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
+                                                    </td>
+
+                                                    <td>
+                                                        Adhamdannaway
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="#" class="text-muted">adhamdannaway@dummy.com</a>
+                                                    </td>
+
+                                                    <td>
+                                                        <b><a href="" class="text-dark"><b>956</b></a> </b>
+                                                    </td>
+
+                                                    <td>
+                                                        24/11/2003
+                                                    </td>
+
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- end container -->
+
+                    <div class="footer">
+                        <div class="pull-right hidden-xs">
+                            Project Completed <strong class="text-custom">39%</strong>.
+                        </div>
+                        <div>
+                            <strong>Simple Admin</strong> - Copyright &copy; 2017
+                        </div>
+                    </div> <!-- end footer -->
+
+                </div>
+                <!-- End #page-right-content -->
+
             </div>
+            <!-- end .page-contentbar -->
         </div>
-        <div id="main">
-            <div id="ribbon" class="hidden-print">
-                <a href="#dashboard" class="btn-ribbon" data-container="#main" data-toggle="tooltip" data-title="Show dashboard"><i class="fa fa-home"></i></a>
-                <span class="vertical-devider">&nbsp;</span>
-                <button class="btn-ribbon" data-container="#main" data-action="reload" data-toggle="tooltip" data-title="Reload content by ajax"><i class="fa fa-refresh"></i></button>
-                <ol class="breadcrumb">
-                </ol>
-            </div>
-           
-            <div id="content">
-
-               
-                
-            </div>
-        </div>
-        <!--Setting box-->
-        <div class="setting-box hidden-print">
-            <div class="btn-toggle">
-                <span class="glyphicon glyphicon-cog"></span>
-            </div>
-            <form action class="lobi-form">
-                <fieldset>
-                    <header>Settings Pages</header>
-                    <div class="form-group">
-                        <label class="checkbox-inline lobicheck lobicheck-rounded">
-                            Header fixed
-                            <input type="checkbox" class="fix-header" value="1"> 
-                            <i></i> 
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="checkbox-inline lobicheck lobicheck-rounded">
-                            Menu fixed
-                            <input type="checkbox" class="fix-menu"> 
-                            <i></i> 
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="checkbox-inline lobicheck lobicheck-rounded">
-                            Ribbon fixed
-                            <input type="checkbox" class="fix-ribbon"> 
-                            <i></i> 
-                        </label>
-                    </div>
-                    <div class="row row-skin-options">
-                        <h4>Skins</h4>
-                        <div class="col-xs-3">
-                            <label class="radio">
-                                <input type="radio" name="header-skin" value="0" checked>
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio">
-                                <input type="radio" name="header-skin" value="header-cyan">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio">
-                                <input type="radio" name="header-skin" value="header-green">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio">
-                                <input type="radio" name="header-skin" value="header-brown">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                    </div>
-                <div class="row row-skin-options">
-                        <h4>Skins</h4>
-                        <div class="btn-group display-block" data-toggle="buttons">
-                            <label class="radio-inline">
-                                <input type="radio" name="header-skin" value="0">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="header-skin" value="header-cyan">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="header-skin" value="header-green">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="header-skin" value="header-brown">
-                                <div>
-                                    <div class="setting-header"></div>
-                                    <div class="setting-menu"></div>
-                                </div>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row row-bg-options">
-                        <h4>Background</h4>
-                        <div class="col-xs-3">
-                            <label class="radio" style="background-color: #fff">
-                                <input type="radio" name="body-bg" data-is-color="true" value="#fff" checked>
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio" style="background-color: #edf1f4">
-                                <input type="radio" name="body-bg" data-is-color="true" value="#edf1f4">
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio" style="background-image: url('img/bg/bg1.png')">
-                                <input type="radio" name="body-bg" value="img/bg/bg1.png">
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                        <div class="col-xs-3">
-                            <label class="radio" style="background-image: url('img/bg/bg4.png')">
-                                <input type="radio" name="body-bg" value="img/bg/bg4.png">
-                                <i class="fa fa-check-square"></i>
-                            </label>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block btn-pretty" data-action="clear-storage"><i class="fa fa-refresh"></i> Clear local storage</button>
-                </fieldset>
-            </form>
-        </div>
-
-        <!--Loading indicator for ajax page loading-->
-        <div class="spinner spinner-horizontal hide">
-            <span class="spinner-text">Loading...</span>
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/lib/jquery.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/lib/jquery-ui.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/bootstrap/bootstrap.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/lobi-plugins/lobibox.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/lobi-plugins/lobipanel.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')?>"></script>
-        
-        <!--Make sure that config.js file is loaded before LobiAdmin.js-->
-        <script type="text/javascript">
-            window.LobiAdminConfig = {
-                fullScreenSelector              : '[data-action="fullscreen"]',
-                reloadPageSelector              : '[data-action="reload"]',
-                sidebarHideShowSelector         : '[data-action="show-hide-sidebar"]',
-                sidebarCollapseExpandSelector   : '[data-action="collapse-expand-sidebar"]',
-                sidebarSelector                 : '.menu',
-                settingBoxSelector              : '.setting-box',
-                searchFormSelector              : '.header .navbar-search',
-                breadcrumbsListSelector         : '#ribbon .breadcrumb',
-                contentSelector                 : '#content',            
-                menuItemIcon                    : 'fa fa-chevron-circle-right',
-                menuItemExpandIcon              : 'fa fa-chevron-circle-down',
-                submenuItemIcon                 : 'fa fa-plus-square-o',
-                submenuItemExpandedIcon         : 'fa fa-minus-square-o',
-                menuToggleIcon                  : 'fa fa-chevron-circle-left',
-                menuToggleCollapsedIcon         : 'fa fa-chevron-circle-right',
-                useLocalStorage                 : true,
-                clearLocalStorageSelector       : '[data-action="clear-storage"]',
-                confirmationBeforeClearStorage  : true,
-                clearStorageConfirmationMessage : "Are you sure you want to clear localStorage? This action can not be undone!",
-                defaultPage                     : '',
-                panelItemToggleAnimationDuration: 200,
-                enableUrlRouting                : true,
-                composeEmailViewSelector        : '[data-action="compose-email"]',
-                openEmailViewSelector           : '[data-action="open-email"]'
-            };
-
-            window.LobiAdminRoutes = {
-                '(.+)' : '<?php echo base_url('/$1')?>',
-            };
+        <!-- End #page-wrapper -->
 
 
-        </script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/LobiAdmin.min.js')?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/admin/js/app.js')?>"></script>
-        <?php if($this->session->flashdata('info')): ?>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                setTimeout(function(){
-                    //All demo scripts go here
-                    Lobibox.notify('info', {
-                        img: '',
-                        sound: false,
-                        position: 'top right',
-                        delay: 5000,
-                        showClass: 'fadeInUp',
-                        msg: '<?php echo $this->session->flashdata('info'); ?>'
-                    });
-                }, 1000);                
-            });
-            function randomIntegers(n, min, max) {
-                var arr = [];
-                for (var i = 0; i < n; i++) {
-                    arr.push(Math.round(min + Math.random() * (max - min)));
-                }
-                return arr;
-            }
-        </script>
-        <?php endif; ?>
 
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="<?= base_url('admin/');?>assets/js/jquery-2.1.4.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/bootstrap.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/metisMenu.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/js/jquery.slimscroll.min.js"></script>
 
-       
+        <!--Morris Chart-->
+        <script src="<?= base_url('admin/');?>assets/plugins/morris/morris.min.js"></script>
+        <script src="<?= base_url('admin/');?>assets/plugins/raphael/raphael-min.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="<?= base_url('admin/');?>assets/pages/jquery.dashboard.js"></script>
+
+        <!-- App Js -->
+        <script src="<?= base_url('admin/');?>assets/js/jquery.app.js"></script>
 
     </body>
 </html>

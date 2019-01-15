@@ -41,7 +41,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_message('required', '%s tidak boleh kosong!');
           if ($this->form_validation->run() === TRUE) 
           {
-            redirect('dashboard');
+            redirect('home');
           } 
       }
     

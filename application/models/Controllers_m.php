@@ -17,18 +17,10 @@
       return $this->db->get();
     }
 
-    public function add($controller,$akses)
+    public function add($data)
     {
-       if ($this->db->get_where('t_controllers', array('controller' => $controller))->row()) 
-       {
-
-            $this->session->set_flashdata('info', 'Nama controller sudah terdaftar');
-            redirect('dashboard#Controllers_crud/index');
-        }
-        else{
-           $hasil=$this->db->query("INSERT INTO t_controllers (controller,akses)VALUES('$controller','$akses')");
-          return $hasil;
-        } 
+        $result = $this->db->insert('t_controllers', $data);
+        return $result;
      
     }
 
