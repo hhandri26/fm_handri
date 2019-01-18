@@ -1,24 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller 
+class Admin extends MY_Controller 
 {
   public function __construct()
   {
     parent::__construct();
+    $this->cekLogin();
     
   }
 
   public function index()
-  {
-    if ($this->ion_auth->logged_in() )
-    {
- 
-    $this->load->view('admin/home');
-    }
-    else
-    {
-        $this->index();
-    }
+  {   
+	$data['content'] = 'admin/dashboard';    
+    $this->load->view('admin/home', $data);
+   
   }
 
   

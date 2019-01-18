@@ -47,7 +47,6 @@
     opacity: 0;
     z-index: 1;
     outline: none !important;
-
     &:disabled + label {
       opacity: 0.65;
     }

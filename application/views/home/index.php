@@ -163,7 +163,7 @@
                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                           <li><a href="<?= base_url('auth');?>"><i class="fa fa-lock"></i></a></li>
+                           <li><a href="<?= base_url('login');?>"><i class="fa fa-lock"></i></a></li>
                         </ul>
                      </div>
                   </div>

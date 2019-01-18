@@ -48,42 +48,24 @@
                                     <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                                 </div>
                                 <div class="account-content">
-                                    
+                                    <!-- <div id="infoMessage"><?php //echo $message;?></div> -->
                                     <?php echo $this->session->flashdata('info'); ?>
-                                    <form class="form-horizontal" action="<?= base_url('auth/login');?>" method="post">
+                                    <form class="form-horizontal" action="<?= base_url('forgot_password');?>" method="post">
 
                                         <div class="form-group m-b-20">
                                             <div class="col-xs-12">
-                                                <label for="emailaddress">Username</label>
+                                                <label for="emailaddress">Email</label>
                                                 <input class="form-control" type="email" id="identity" name="identity" placeholder="john@deo.com">
                                                  <?php
                                                     echo form_error('identity', '<label for="emailaddress" class="error" style="display: block">', '</label>');
                                                 ?>
                                             </div>
-                                        </div>
+                                        </div>                                     
 
-                                        <div class="form-group m-b-20">
-                                            <div class="col-xs-12">
-                                                <a href="<?= base_url('forgot_password');?>" class="text-muted pull-right font-14">Forgot your password?</a>
-                                                <label for="password">Password</label>
-                                                <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
-                                                 <?php
-                                                    echo form_error('password', '<label for="password" class="error" style="display: block">', '</label>');
-                                                ?>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group m-b-30">
-                                            <div class="col-xs-12">
-                                                
-                                                <?php echo form_checkbox('remember','1',FALSE);?> Remember me
-                                                
-                                            </div>
-                                        </div>
 
                                         <div class="form-group account-btn text-center m-t-10">
                                             <div class="col-xs-12">
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
                                             </div>
                                         </div>
 
